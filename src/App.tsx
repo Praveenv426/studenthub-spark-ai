@@ -7,6 +7,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Attendance from "./pages/Attendance";
 import Timetable from "./pages/Timetable";
+import StudyMaterial from "./pages/StudyMaterial";
+import Assignments from "./pages/Assignments";
+import InternalMarks from "./pages/InternalMarks";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -21,10 +24,10 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/attendance" element={<Attendance />} />
           <Route path="/timetable" element={<Timetable />} />
+          <Route path="/study-material" element={<StudyMaterial />} />
+          <Route path="/assignments" element={<Assignments />} />
+          <Route path="/internal-marks" element={<InternalMarks />} />
           {/* Placeholder routes for other menu items */}
-          <Route path="/study-material" element={<NotFound />} />
-          <Route path="/assignments" element={<NotFound />} />
-          <Route path="/internal-marks" element={<NotFound />} />
           <Route path="/leave-requests" element={<NotFound />} />
           <Route path="/messaging" element={<NotFound />} />
           <Route path="/reports" element={<NotFound />} />

@@ -1,4 +1,5 @@
 
+import React from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -16,31 +17,34 @@ import Reports from "./pages/Reports";
 import Settings from "./pages/Settings";
 import NotFound from "./pages/NotFound";
 
+// Create a new instance of QueryClient outside of the component
 const queryClient = new QueryClient();
 
 const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/attendance" element={<Attendance />} />
-          <Route path="/timetable" element={<Timetable />} />
-          <Route path="/study-material" element={<StudyMaterial />} />
-          <Route path="/assignments" element={<Assignments />} />
-          <Route path="/internal-marks" element={<InternalMarks />} />
-          <Route path="/leave-requests" element={<LeaveRequest />} />
-          <Route path="/messaging" element={<Messaging />} />
-          <Route path="/reports" element={<Reports />} />
-          <Route path="/settings" element={<Settings />} />
-          {/* Catch-all route */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
+  <React.StrictMode>
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/attendance" element={<Attendance />} />
+            <Route path="/timetable" element={<Timetable />} />
+            <Route path="/study-material" element={<StudyMaterial />} />
+            <Route path="/assignments" element={<Assignments />} />
+            <Route path="/internal-marks" element={<InternalMarks />} />
+            <Route path="/leave-requests" element={<LeaveRequest />} />
+            <Route path="/messaging" element={<Messaging />} />
+            <Route path="/reports" element={<Reports />} />
+            <Route path="/settings" element={<Settings />} />
+            {/* Catch-all route */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </TooltipProvider>
+    </QueryClientProvider>
+  </React.StrictMode>
 );
 
 export default App;

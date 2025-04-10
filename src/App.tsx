@@ -10,6 +10,10 @@ import Timetable from "./pages/Timetable";
 import StudyMaterial from "./pages/StudyMaterial";
 import Assignments from "./pages/Assignments";
 import InternalMarks from "./pages/InternalMarks";
+import LeaveRequest from "./pages/LeaveRequest";
+import Messaging from "./pages/Messaging";
+import Reports from "./pages/Reports";
+import Settings from "./pages/Settings";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -27,11 +31,10 @@ const App = () => (
           <Route path="/study-material" element={<StudyMaterial />} />
           <Route path="/assignments" element={<Assignments />} />
           <Route path="/internal-marks" element={<InternalMarks />} />
-          {/* Placeholder routes for other menu items */}
-          <Route path="/leave-requests" element={<NotFound />} />
-          <Route path="/messaging" element={<NotFound />} />
-          <Route path="/reports" element={<NotFound />} />
-          <Route path="/settings" element={<NotFound />} />
+          <Route path="/leave-requests" element={<LeaveRequest />} />
+          <Route path="/messaging" element={<Messaging />} />
+          <Route path="/reports" element={<Reports />} />
+          <Route path="/settings" element={<Settings />} />
           {/* Catch-all route */}
           <Route path="*" element={<NotFound />} />
         </Routes>
